@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 
 import { Tracking, } from 'domain/Tracking';
 import { CurrentTime } from 'interface/CurrentTime';
-import { iswroted, isset } from 'utils/guards';
+import { iswritten, isset } from 'utils/guards';
 
 import type { ReactNode } from 'react';
 
@@ -56,7 +56,7 @@ export class App extends PureComponent<{}, IAppState> {
 
   private stopTrack = () => {
     const { currentTimeTrack } = this.state;
-    if (!iswroted(currentTimeTrack)) return;
+    if (!iswritten(currentTimeTrack)) return;
 
     this.tracking.finishTimeTrack(currentTimeTrack);
     this.setState({
@@ -84,7 +84,7 @@ export class App extends PureComponent<{}, IAppState> {
       <div>
         { this.renderNewTrackButton() }
         { this.renderStartButton(inTracking) }
-        { iswroted(currentTimeTrack) && <CurrentTime currentTimeTrack={ currentTimeTrack }/> }
+        { iswritten(currentTimeTrack) && <CurrentTime currentTimeTrack={ currentTimeTrack }/> }
         <ul>
           { tracks.map(this.renderTrack(currentTrack)) }
         </ul>

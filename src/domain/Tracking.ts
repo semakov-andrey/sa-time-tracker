@@ -11,7 +11,7 @@ export interface ITracking {
   startTimeTrack(): ITimeTrack;
   finishTimeTrack(tt: ITimeTrack): ITimeTrack;
   pushTimeTrackToTrack(track: ITrack, timeTrack: ITimeTrack): void;
-}
+};
 
 export class Tracking implements ITracking {
   public startTrack(name: string): ITrack {

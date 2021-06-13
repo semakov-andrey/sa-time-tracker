@@ -1,5 +1,15 @@
-import HtmlWebpackPlugin from 'html-webpack-plugin';
 import path from 'path';
+
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+
+const isProduction = process.env.NODE_ENV === 'production';
+
+const getAliases = (folders) =>
+  folders.reduce((acc, folder) => ({
+    ...acc,
+    [folder]: path.resolve(`src/${folder}`)
+  }), {});
 
 export default {
   entry: './src/index.tsx',
@@ -8,11 +18,17 @@ export default {
     publicPath: '/'
   },
   mode: process.env.NODE_ENV,
+  stats: 'errors-warnings',
+  devtool: isProduction ? false : 'eval-cheap-source-map',
   module: {
     rules: [
       {
         test: /\.tsx?$/,
-        use: 'ts-loader'
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          transpileOnly: true
+        }
       }
     ]
   },
@@ -20,7 +36,8 @@ export default {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html'
-    })
+    }),
+    new ForkTsCheckerWebpackPlugin()
   ],
   devServer: {
     contentBase: '/',
@@ -30,10 +47,12 @@ export default {
   resolve: {
     extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
     alias: {
-      'entities': path.resolve('src/entities'),
-      'domain': path.resolve('src/domain'),
-      'interface': path.resolve('src/interface'),
-      'utils': path.resolve('src/utils')
+      ...getAliases([
+        'entities',
+        'domain',
+        'interface',
+        'utils'
+      ])
     }
   }
 };
