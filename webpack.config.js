@@ -28,6 +28,12 @@ export default {
     port: 3000
   },
   resolve: {
-    extensions: [ '.js', '.jsx', '.ts', '.tsx' ]
+    extensions: [ '.js', '.jsx', '.ts', '.tsx' ],
+    alias: {
+      'entities': path.resolve('src/entities'),
+      'domain': path.resolve('src/domain'),
+      'interface': path.resolve('src/interface'),
+      'utils': path.resolve('src/utils')
+    }
   }
 };

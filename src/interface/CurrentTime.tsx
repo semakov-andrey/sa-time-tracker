@@ -1,8 +1,11 @@
-import React, { PureComponent, ReactNode } from 'react';
-import { TimeTrack } from './entities/TimeTrack';
+import React, { PureComponent } from 'react';
+
+import type { ReactNode } from 'react';
+
+import type { ITimeTrack } from 'entities/TimeTrack';
 
 interface ICurrentTimeProps {
-  currentTimeTrack: TimeTrack;
+  currentTimeTrack: ITimeTrack;
 };
 
 export class CurrentTime extends PureComponent<ICurrentTimeProps> {

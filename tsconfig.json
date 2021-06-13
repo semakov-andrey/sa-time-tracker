@@ -7,6 +7,13 @@
     "strict": true,
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "noUncheckedIndexedAccess": true
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": "./",
+    "paths": {
+      "entities/*": [ "./src/entities/*" ],
+      "domain/*": [ "./src/domain/*" ],
+      "interface/*": [ "./src/interface/*" ],
+      "utils/*": [ "./src/utils/*" ]
+    }
   }
 }

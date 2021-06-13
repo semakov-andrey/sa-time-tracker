@@ -1,14 +1,19 @@
-import React, { PureComponent, ReactNode } from 'react';
-import { CurrentTime } from './CurrentTime';
-import { Tracking } from './domain/Tracking';
-import { TimeTrack } from './entities/TimeTrack';
-import { Track } from './entities/Track';
-import { iswroted, isset } from './utils/guards';
+import React, { PureComponent } from 'react';
+
+import { Tracking, } from 'domain/Tracking';
+import { CurrentTime } from 'interface/CurrentTime';
+import { iswroted, isset } from 'utils/guards';
+
+import type { ReactNode } from 'react';
+
+import type { ITimeTrack } from 'entities/TimeTrack';
+import type { ITrack } from 'entities/Track';
+import type { ITracking } from 'domain/Tracking';
 
 interface IAppState {
-  tracks: Array<Track>;
-  currentTrack: Track | null;
-  currentTimeTrack: TimeTrack | null;
+  tracks: Array<ITrack>;
+  currentTrack: ITrack | null;
+  currentTimeTrack: ITimeTrack | null;
   inTracking: boolean;
 };
 
@@ -18,7 +23,7 @@ export class App extends PureComponent<{}, IAppState> {
     this.tracking = new Tracking();
   };
 
-  private tracking: Tracking;
+  private tracking: ITracking;
 
   public state: IAppState = {
     tracks: [],
@@ -27,7 +32,7 @@ export class App extends PureComponent<{}, IAppState> {
     inTracking: false
   };
 
-  private addNewTrack = (): Track => {
+  private addNewTrack = (): ITrack => {
     const newTrack = this.tracking.startTrack('noname');
     this.setState(({ tracks }: IAppState) => ({
       tracks: [ ...tracks, newTrack ]
@@ -61,7 +66,7 @@ export class App extends PureComponent<{}, IAppState> {
   };
 
   private setCurrentTrack = (id: string) => () => {
-    const currentTrack = this.state.tracks.find((track: Track) => track.id === id);
+    const currentTrack = this.state.tracks.find((track: ITrack) => track.id === id);
     if (isset(currentTrack)) {
       this.setState({ currentTrack });
     }
@@ -97,7 +102,7 @@ export class App extends PureComponent<{}, IAppState> {
   );
     
 
-  private renderTrack = (currentTrack: Track | null) => (track: Track): ReactNode => {
+  private renderTrack = (currentTrack: ITrack | null) => (track: ITrack): ReactNode => {
     const { id, name, timeTracks } = track;
     const isActive = track === currentTrack;
   
@@ -110,7 +115,7 @@ export class App extends PureComponent<{}, IAppState> {
     );
   };
 
-  private renderTime = (timeTracks: Array<TimeTrack>) =>
+  private renderTime = (timeTracks: Array<ITimeTrack>) =>
     Math.ceil(timeTracks
-      .reduce((acc: number, { duration }: TimeTrack) => acc + duration, 0));
+      .reduce((acc: number, { duration }: ITimeTrack) => acc + duration, 0));
 };
