@@ -28,8 +28,9 @@ export class CurrentTime extends PureComponent<ICurrentTimeProps> {
   };
 
   public render = (): ReactNode => {
+    const divider = 1000;
     const { currentTimeTrack: { startTime } } = this.props;
-    const time = ((new Date()).getTime() - startTime.getTime()) / 1000;
+    const time = ((new Date()).getTime() - startTime.getTime()) / divider;
 
     return <div>{ time } sec</div>;
   };

@@ -23,7 +23,9 @@ export class Tracking implements ITracking {
   };
 
   public finishTimeTrack(tt: ITimeTrack): ITimeTrack {
-    tt.duration = ((new Date()).getTime() - tt.startTime.getTime()) / 1000;
+    const divider = 1000;
+    tt.duration = ((new Date()).getTime() - tt.startTime.getTime()) / divider;
+
     return tt;
   };
 
