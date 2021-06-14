@@ -17,8 +17,8 @@ interface IAppState {
   inTracking: boolean;
 };
 
-export class App extends PureComponent<{}, IAppState> {
-  constructor(props: {}) {
+export class App extends PureComponent<undefined, IAppState> {
+  constructor(props: undefined) {
     super(props);
     this.tracking = new Tracking();
   };

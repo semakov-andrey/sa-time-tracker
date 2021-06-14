@@ -36,7 +36,9 @@
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-react": "^7.24.0",
     "eslint-plugin-rulesdir": "^0.2.0",
-    "module-alias": "^2.2.2"
+    "log-update": "^4.0.0",
+    "module-alias": "^2.2.2",
+    "webpackbar": "*"
   },
   "_moduleAliases": {
     "eslint-plugin-rulesdir": "./compiler/eslint/rulesdir.cjs"

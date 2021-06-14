@@ -77,7 +77,7 @@ module.exports = {
     'accessor-pairs': [ 'error', { enforceForClassMembers: true } ],
     'array-callback-return': 'error',
     'block-scoped-var': 'error',
-    'curly': [ 'error', 'all' ],
+    'curly': [ 'error', 'multi-line' ],
     'default-case': 'error',
     'default-param-last': 'error',
     'dot-location': [ 'error', 'property' ],
@@ -321,7 +321,10 @@ module.exports = {
     {
       excludedFiles: [ '**/*.d.ts' ],
       files: [ '*.ts', '*.tsx' ],
-      rules: { 'rulesdir/semi-interface': 'error' }
+      rules: {
+        'rulesdir/semi-interface': 'error',
+        'rulesdir/progress': 'error'
+      }
     },
     {
       files: [ '*.jsx', '*.tsx' ],

@@ -2,13 +2,14 @@ import path from 'path';
 
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
+import WebpackBar from 'webpackbar';
 
 const isProduction = process.env.NODE_ENV === 'production';
 
 const getAliases = (folders) =>
   folders.reduce((acc, folder) => ({
     ...acc,
-    [folder]: path.resolve(`src/${folder}`)
+    [folder]: path.resolve(`src/${ folder }`)
   }), {});
 
 export default {
@@ -37,7 +38,8 @@ export default {
       template: './src/index.html',
       filename: 'index.html'
     }),
-    new ForkTsCheckerWebpackPlugin()
+    new ForkTsCheckerWebpackPlugin(),
+    new WebpackBar()
   ],
   devServer: {
     contentBase: '/',
