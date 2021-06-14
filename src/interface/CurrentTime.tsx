@@ -11,16 +11,16 @@ interface ICurrentTimeProps {
 export class CurrentTime extends PureComponent<ICurrentTimeProps> {
   private inUpdating = false;
 
-  public componentDidMount = () => {
+  public componentDidMount = (): void => {
     this.inUpdating = true;
     this.updateComponent();
   };
 
-  public componentWillUnmount = () => {
+  public componentWillUnmount = (): void => {
     this.inUpdating = false;
   };
 
-  private updateComponent = () => {
+  private updateComponent = (): void => {
     if (this.inUpdating) {
       this.forceUpdate();
       window.requestAnimationFrame(this.updateComponent);
@@ -30,7 +30,7 @@ export class CurrentTime extends PureComponent<ICurrentTimeProps> {
   public render = (): ReactNode => {
     const { currentTimeTrack: { startTime } } = this.props;
     const time = ((new Date()).getTime() - startTime.getTime()) / 1000;
-  
+
     return <div>{ time } sec</div>;
   };
 };

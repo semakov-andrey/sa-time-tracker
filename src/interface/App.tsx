@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 
-import { Tracking, } from 'domain/Tracking';
+import { Tracking } from 'domain/Tracking';
 import { CurrentTime } from 'interface/CurrentTime';
 import { iswritten, isset } from 'utils/guards';
 
@@ -40,7 +40,7 @@ export class App extends PureComponent<{}, IAppState> {
     return newTrack;
   };
 
-  private startTrack = () => {
+  private startTrack = (): void => {
     let { currentTrack, tracks } = this.state;
     if (currentTrack === null) {
       currentTrack = !isset(tracks[0]) ? this.addNewTrack() : tracks[0];
@@ -54,7 +54,7 @@ export class App extends PureComponent<{}, IAppState> {
     });
   };
 
-  private stopTrack = () => {
+  private stopTrack = (): void => {
     const { currentTimeTrack } = this.state;
     if (!iswritten(currentTimeTrack)) return;
 
@@ -65,7 +65,7 @@ export class App extends PureComponent<{}, IAppState> {
     });
   };
 
-  private setCurrentTrack = (id: string) => () => {
+  private setCurrentTrack = (id: string) => (): void => {
     const currentTrack = this.state.tracks.find((track: ITrack) => track.id === id);
     if (isset(currentTrack)) {
       this.setState({ currentTrack });
@@ -100,12 +100,11 @@ export class App extends PureComponent<{}, IAppState> {
       { inTracking ? 'Stop' : 'Start' }
     </button>
   );
-    
 
   private renderTrack = (currentTrack: ITrack | null) => (track: ITrack): ReactNode => {
     const { id, name, timeTracks } = track;
     const isActive = track === currentTrack;
-  
+
     return (
       <li key={ id }>
         <button onClick={ this.setCurrentTrack(id) } style={ isActive ? { border: '1px solid red' } : {} }>
@@ -115,7 +114,7 @@ export class App extends PureComponent<{}, IAppState> {
     );
   };
 
-  private renderTime = (timeTracks: Array<ITimeTrack>) =>
+  private renderTime = (timeTracks: Array<ITimeTrack>): number =>
     Math.ceil(timeTracks
       .reduce((acc: number, { duration }: ITimeTrack) => acc + duration, 0));
 };

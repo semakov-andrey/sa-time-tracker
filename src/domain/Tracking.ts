@@ -27,7 +27,7 @@ export class Tracking implements ITracking {
     return tt;
   };
 
-  public pushTimeTrackToTrack(track: ITrack, timeTrack: ITimeTrack) {
+  public pushTimeTrackToTrack(track: ITrack, timeTrack: ITimeTrack): void {
     track.timeTracks.push(timeTrack);
   };
 };
