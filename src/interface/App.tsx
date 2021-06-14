@@ -4,11 +4,10 @@ import { Tracking } from 'domain/Tracking';
 import { CurrentTime } from 'interface/CurrentTime';
 import { iswritten, isset } from 'utils/guards';
 
-import type { ReactNode } from 'react';
-
+import type { ITracking } from 'domain/Tracking';
 import type { ITimeTrack } from 'entities/TimeTrack';
 import type { ITrack } from 'entities/Track';
-import type { ITracking } from 'domain/Tracking';
+import type { ReactNode } from 'react';
 
 interface IAppState {
   tracks: Array<ITrack>;

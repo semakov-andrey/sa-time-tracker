@@ -1,8 +1,7 @@
 import React, { PureComponent } from 'react';
 
-import type { ReactNode } from 'react';
-
 import type { ITimeTrack } from 'entities/TimeTrack';
+import type { ReactNode } from 'react';
 
 interface ICurrentTimeProps {
   currentTimeTrack: ITimeTrack;

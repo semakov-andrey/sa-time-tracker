@@ -8,13 +8,17 @@ const fullPercents = 100;
 
 module.exports = {
   create(context) {
-    if (!options) {
+    if (!options && process && process.argv) {
       try {
         options = CLIOptions.parse(process.argv);
+        if (options && Array.isArray(options._)) {
+          files = options._.map((file) => path.resolve(file));
+        }
       } catch (error) {
-        return console.error(error.message);
+        console.error(error.message);
+
+        return {};
       }
-      files = options._?.map((file) => path.resolve(file));
     }
     if (!files) return {};
 

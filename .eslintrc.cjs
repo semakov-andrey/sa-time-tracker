@@ -311,7 +311,7 @@ module.exports = {
         'import/order': [
           'error',
           {
-            'groups': [ 'builtin', 'external', 'internal', 'index', 'sibling', 'parent' ],
+            'groups': [ 'builtin', 'external', 'internal', 'index', 'sibling', 'parent', 'type' ],
             'newlines-between': 'always',
             'alphabetize': { order: 'asc', caseInsensitive: true }
           }
