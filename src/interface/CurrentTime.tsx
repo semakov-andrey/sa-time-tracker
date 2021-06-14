@@ -9,8 +9,6 @@ interface ICurrentTimeProps {
 };
 
 export class CurrentTime extends PureComponent<ICurrentTimeProps> {
-  private inUpdating = false;
-
   public componentDidMount = (): void => {
     this.inUpdating = true;
     this.updateComponent();
@@ -19,6 +17,8 @@ export class CurrentTime extends PureComponent<ICurrentTimeProps> {
   public componentWillUnmount = (): void => {
     this.inUpdating = false;
   };
+
+  private inUpdating = false;
 
   private updateComponent = (): void => {
     if (this.inUpdating) {

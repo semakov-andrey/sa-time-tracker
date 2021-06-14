@@ -17,13 +17,13 @@ interface IAppState {
   inTracking: boolean;
 };
 
-export class App extends PureComponent<undefined, IAppState> {
-  constructor(props: undefined) {
+type TAppProps = Record<string, never>;
+
+export class App extends PureComponent<TAppProps, IAppState> {
+  constructor(props: TAppProps) {
     super(props);
     this.tracking = new Tracking();
   };
-
-  private tracking: ITracking;
 
   public state: IAppState = {
     tracks: [],
@@ -31,6 +31,8 @@ export class App extends PureComponent<undefined, IAppState> {
     currentTimeTrack: null,
     inTracking: false
   };
+
+  private tracking: ITracking;
 
   private addNewTrack = (): ITrack => {
     const newTrack = this.tracking.startTrack('noname');

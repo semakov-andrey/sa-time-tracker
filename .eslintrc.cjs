@@ -356,10 +356,13 @@ module.exports = {
           'error',
           {
             order: [
+              'static-variables',
               'static-methods',
               'lifecycle',
+              'instance-variables',
+              'instance-methods',
               'everything-else',
-              'rendering'
+              '/^render.+$/'
             ],
             groups: {
               rendering: [
