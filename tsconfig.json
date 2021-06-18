@@ -8,11 +8,14 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "noUncheckedIndexedAccess": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "baseUrl": "./",
     "paths": {
       "entities/*": [ "./src/entities/*" ],
       "domain/*": [ "./src/domain/*" ],
       "interface/*": [ "./src/interface/*" ],
+      "store/*": [ "./src/store/*" ],
       "utils/*": [ "./src/utils/*" ]
     }
   }

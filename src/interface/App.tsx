@@ -2,75 +2,64 @@ import React, { PureComponent } from 'react';
 
 import { Tracking } from 'domain/Tracking';
 import { CurrentTime } from 'interface/CurrentTime';
+import { inject } from 'utils/di';
 import { iswritten, isset } from 'utils/guards';
+import { observe } from 'utils/observer';
 
+import { STrackingRepo } from './trackingRepo';
+
+import type { ITrackingRepo } from './trackingRepo';
 import type { ITracking } from 'domain/Tracking';
 import type { ITimeTrack } from 'entities/TimeTrack';
 import type { ITrack } from 'entities/Track';
 import type { ReactNode } from 'react';
 
-interface IAppState {
-  tracks: Array<ITrack>;
-  currentTrack: ITrack | null;
-  currentTimeTrack: ITimeTrack | null;
-  inTracking: boolean;
-};
-
 type TAppProps = Record<string, never>;
 
-export class App extends PureComponent<TAppProps, IAppState> {
+export class App extends PureComponent<TAppProps> {
   constructor(props: TAppProps) {
     super(props);
     this.tracking = new Tracking();
   };
 
-  public state: IAppState = {
-    tracks: [],
-    currentTrack: null,
-    currentTimeTrack: null,
-    inTracking: false
-  };
-
   private tracking: ITracking;
+
+  @observe()
+  @inject(STrackingRepo)
+  private trackingRepo!: ITrackingRepo;
 
   private addNewTrack = (): ITrack => {
     const newTrack = this.tracking.startTrack('noname');
-    this.setState(({ tracks }: IAppState) => ({
-      tracks: [ ...tracks, newTrack ]
-    }));
+    this.trackingRepo.addNewTrack(newTrack);
 
     return newTrack;
   };
 
   private startTrack = (): void => {
-    let { currentTrack, tracks } = this.state;
+    let { currentTrack, tracks } = this.trackingRepo;
     if (currentTrack === null) {
       currentTrack = !isset(tracks[0]) ? this.addNewTrack() : tracks[0];
-      this.setState({ currentTrack });
+      this.trackingRepo.setCurrentTrack(currentTrack);
     }
     const currentTimeTrack = this.tracking.startTimeTrack();
     this.tracking.pushTimeTrackToTrack(currentTrack, currentTimeTrack);
-    this.setState({
-      currentTimeTrack,
-      inTracking: true
-    });
+    this.trackingRepo.setCurrentTimeTrack(currentTimeTrack);
+    this.trackingRepo.setInTracking(true);
   };
 
   private stopTrack = (): void => {
-    const { currentTimeTrack } = this.state;
+    const { currentTimeTrack } = this.trackingRepo;
     if (!iswritten(currentTimeTrack)) return;
 
     this.tracking.finishTimeTrack(currentTimeTrack);
-    this.setState({
-      currentTimeTrack: null,
-      inTracking: false
-    });
+    this.trackingRepo.setCurrentTimeTrack(null);
+    this.trackingRepo.setInTracking(false);
   };
 
   private setCurrentTrack = (id: string) => (): void => {
-    const currentTrack = this.state.tracks.find((track: ITrack) => track.id === id);
+    const currentTrack = this.trackingRepo.tracks.find((track: ITrack) => track.id === id);
     if (isset(currentTrack)) {
-      this.setState({ currentTrack });
+      this.trackingRepo.setCurrentTrack(currentTrack);
     }
   };
 
@@ -80,7 +69,7 @@ export class App extends PureComponent<TAppProps, IAppState> {
       currentTrack,
       currentTimeTrack,
       inTracking
-    } = this.state;
+    } = this.trackingRepo;
 
     return (
       <div>

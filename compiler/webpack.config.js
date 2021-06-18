@@ -53,6 +53,7 @@ export default {
         'entities',
         'domain',
         'interface',
+        'store',
         'utils'
       ])
     }

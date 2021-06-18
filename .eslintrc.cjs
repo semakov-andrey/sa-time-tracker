@@ -172,7 +172,7 @@ module.exports = {
     'comma-spacing': [ 'error', { before: false, after: true } ],
     'comma-style': [ 'error', 'last' ],
     'computed-property-spacing': [ 'error', 'never' ],
-    'consistent-this': [ 'error', 'self' ],
+    // 'consistent-this': [ 'error', 'self' ],
     'eol-last': [ 'error', 'always' ],
     'func-call-spacing': [ 'error', 'never' ],
     'func-name-matching': [ 'error', { considerPropertyDescriptor: true } ],
@@ -516,10 +516,10 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
         '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-        '@typescript-eslint/no-unsafe-assignment': 'error',
-        '@typescript-eslint/no-unsafe-call': 'error',
-        '@typescript-eslint/no-unsafe-member-access': 'error',
-        '@typescript-eslint/no-unsafe-return': 'error',
+        // '@typescript-eslint/no-unsafe-assignment': 'error',
+        // '@typescript-eslint/no-unsafe-call': 'error',
+        // '@typescript-eslint/no-unsafe-member-access': 'error',
+        // '@typescript-eslint/no-unsafe-return': 'error',
         '@typescript-eslint/prefer-as-const': 'error',
         '@typescript-eslint/prefer-enum-initializers': 'error',
         '@typescript-eslint/prefer-includes': 'error',
@@ -553,7 +553,7 @@ module.exports = {
             propertyDeclaration: true
           }
         ],
-        '@typescript-eslint/unbound-method': [ 'error', { ignoreStatic: true } ],
+        // '@typescript-eslint/unbound-method': [ 'error', { ignoreStatic: true } ],
         '@typescript-eslint/unified-signatures': 'error',
 
         'comma-dangle': 'off',
