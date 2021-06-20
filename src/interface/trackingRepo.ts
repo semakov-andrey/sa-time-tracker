@@ -3,12 +3,12 @@ import type { ITrack } from 'entities/Track';
 
 export interface ITrackingRepo {
   tracks: Array<ITrack>;
-  currentTrack: ITrack | null;
-  currentTimeTrack: ITimeTrack | null;
+  currentTrack: Nullable<ITrack>;
+  currentTimeTrack: Nullable<ITimeTrack>;
   inTracking: boolean;
   addNewTrack: (newTrack: ITrack) => unknown;
-  setCurrentTrack: (currentTrack: ITrack | null) => unknown;
-  setCurrentTimeTrack: (currentTimeTrack: ITimeTrack | null) => unknown;
+  setCurrentTrack: (currentTrack: Nullable<ITrack>) => unknown;
+  setCurrentTimeTrack: (currentTimeTrack: Nullable<ITimeTrack>) => unknown;
   setInTracking: (inTrackingValue: boolean) => unknown;
 };
 

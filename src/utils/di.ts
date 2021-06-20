@@ -12,8 +12,8 @@ class IoCContainer {
     return constructor as T;
   };
 
-  public set = <T>(token: symbol, constructor: new () => T): void => {
-    this.instances.set(token, new constructor());
+  public set = <T>(token: symbol, constructor: () => T): void => {
+    this.instances.set(token, constructor());
   };
 };
 

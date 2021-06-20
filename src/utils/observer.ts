@@ -1,6 +1,6 @@
 import { PureComponent } from 'react';
 
-import { store } from 'store/Tracking';
+import { store } from 'store/store';
 
 import { isKeyOfObject, isset, isTypeObject, TObjectKey } from './guards';
 
