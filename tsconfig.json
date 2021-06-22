@@ -11,6 +11,17 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "baseUrl": "./",
+    "lib": [
+      "dom",
+      "es2015",
+      "es2016",
+      "es2017",
+      "es2018",
+      "es2019",
+      "es2020",
+      "esnext",
+      "WebWorker"
+    ],
     "paths": {
       "entities/*": [ "./src/entities/*" ],
       "domain/*": [ "./src/domain/*" ],
@@ -18,5 +29,12 @@
       "store/*": [ "./src/store/*" ],
       "utils/*": [ "./src/utils/*" ]
     }
-  }
+  },
+  "exclude": [
+    "./node_modules"
+  ],
+  "include": [
+    "**/*",
+    ".eslintrc.cjs"
+  ]
 }

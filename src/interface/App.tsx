@@ -2,16 +2,17 @@ import React, { PureComponent } from 'react';
 
 import { Tracking } from 'domain/Tracking';
 import { CurrentTime } from 'interface/CurrentTime';
+import { STrackingRepo } from 'interface/trackingRepo';
 import { inject } from 'utils/di';
 import { iswritten, isset } from 'utils/guards';
 import { observe } from 'utils/observer';
 
-import { STrackingRepo } from './trackingRepo';
+import { css } from './App.css';
 
-import type { ITrackingRepo } from './trackingRepo';
 import type { ITracking } from 'domain/Tracking';
 import type { ITimeTrack } from 'entities/TimeTrack';
 import type { ITrack } from 'entities/Track';
+import type { ITrackingRepo } from 'interface/trackingRepo';
 import type { ReactNode } from 'react';
 
 type TAppProps = Record<string, never>;
@@ -72,14 +73,14 @@ export class App extends PureComponent<TAppProps> {
     } = this.trackingRepo;
 
     return (
-      <div>
+      <main className={ css.timeTracker }>
         { this.renderNewTrackButton() }
         { this.renderStartButton(inTracking) }
         { iswritten(currentTimeTrack) && <CurrentTime currentTimeTrack={ currentTimeTrack }/> }
         <ul>
           { tracks.map(this.renderTrack(currentTrack)) }
         </ul>
-      </div>
+      </main>
     );
   };
 
