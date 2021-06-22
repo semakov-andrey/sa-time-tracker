@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { hot } from 'react-hot-loader/root';
 
 import { Tracking } from 'domain/Tracking';
 import { CurrentTime } from 'interface/CurrentTime';
@@ -8,6 +9,7 @@ import { iswritten, isset } from 'utils/guards';
 import { observe } from 'utils/observer';
 
 import { css } from './App.css';
+import 'normalize.css';
 
 import type { ITracking } from 'domain/Tracking';
 import type { ITimeTrack } from 'entities/TimeTrack';
@@ -17,7 +19,7 @@ import type { ReactNode } from 'react';
 
 type TAppProps = Record<string, never>;
 
-export class App extends PureComponent<TAppProps> {
+class AppComponent extends PureComponent<TAppProps> {
   constructor(props: TAppProps) {
     super(props);
     this.tracking = new Tracking();
@@ -114,3 +116,5 @@ export class App extends PureComponent<TAppProps> {
     Math.ceil(timeTracks
       .reduce((acc: number, { duration }: ITimeTrack) => acc + duration, 0));
 };
+
+export const App = hot(AppComponent);

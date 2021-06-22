@@ -9,10 +9,17 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font: 20px/1.5 Helvetica, Arial, sans-serif; 
 }
 
 .time-tracker {
-  width: 200px;
+  max-width: 300px;
+  max-height: 600px;
   border: 1px solid black;
   border-radius: 2px;
+  padding: 16px;
+}
+
+button {
+  font: inherit;
 }

@@ -26,7 +26,7 @@ const serverOptions = {
 const server = express();
 
 server.use((req, res, next) => {
-  if (!/(\.(?!html)\w+$|__webpack.*|client\.css)/u.test(req.url)) {
+  if (!/(\.(?!html)\w+$|__webpack.*|index\.css)/u.test(req.url)) {
     req.url = '/';
   }
   next();
