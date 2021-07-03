@@ -31,6 +31,6 @@ export class CurrentTime extends PureComponent<ICurrentTimeProps> {
     const { currentTimeTrack: { startTime } } = this.props;
     const time = ((new Date()).getTime() - startTime.getTime()) / divider;
 
-    return <div>{ time } sec</div>;
+    return <time>Passed: { time } sec</time>;
   };
 };

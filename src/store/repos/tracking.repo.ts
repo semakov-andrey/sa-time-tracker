@@ -1,4 +1,4 @@
-import { STrackingRepo } from 'interface/trackingRepo';
+import { STrackingRepo } from 'interface/interfaces/trackingRepo';
 import {
   addNewTrack,
   setCurrentTrack,

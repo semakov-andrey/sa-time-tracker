@@ -1,0 +1,17 @@
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font: 400 16px/1.5 Helvetica, Arial, sans-serif;
+}
+
+:global {
+  .app {
+    width: 100%;
+    height: 100%;
+  }
+}

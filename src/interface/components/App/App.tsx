@@ -2,19 +2,19 @@ import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader/root';
 
 import { Tracking } from 'domain/Tracking';
-import { CurrentTime } from 'interface/CurrentTime';
-import { STrackingRepo } from 'interface/trackingRepo';
+import { CurrentTime } from 'interface/components/CurrentTime/CurrentTime';
+import { STrackingRepo } from 'interface/interfaces/trackingRepo';
+import { cn } from 'utils/classnames';
 import { inject } from 'utils/di';
 import { iswritten, isset } from 'utils/guards';
 import { observe } from 'utils/observer';
 
 import { css } from './App.css';
-import 'normalize.css';
 
 import type { ITracking } from 'domain/Tracking';
 import type { ITimeTrack } from 'entities/TimeTrack';
 import type { ITrack } from 'entities/Track';
-import type { ITrackingRepo } from 'interface/trackingRepo';
+import type { ITrackingRepo } from 'interface/interfaces/trackingRepo';
 import type { ReactNode } from 'react';
 
 type TAppProps = Record<string, never>;
@@ -32,7 +32,7 @@ class AppComponent extends PureComponent<TAppProps> {
   private trackingRepo!: ITrackingRepo;
 
   private addNewTrack = (): ITrack => {
-    const newTrack = this.tracking.startTrack('noname');
+    const newTrack = this.tracking.startTrack('Noname');
     this.trackingRepo.addNewTrack(newTrack);
 
     return newTrack;
@@ -75,22 +75,39 @@ class AppComponent extends PureComponent<TAppProps> {
     } = this.trackingRepo;
 
     return (
-      <main className={ css.timeTracker }>
-        { this.renderNewTrackButton() }
-        { this.renderStartButton(inTracking) }
-        { iswritten(currentTimeTrack) && <CurrentTime currentTimeTrack={ currentTimeTrack }/> }
-        <ul>
-          { tracks.map(this.renderTrack(currentTrack)) }
-        </ul>
+      <main className={ css.main }>
+        <section className={ css.timeTracker }>
+          <div className={ css.buttons }>
+            { this.renderNewTrackButton() }
+            { this.renderStartButton(inTracking) }
+          </div>
+          <div className={ css.currentTime }>
+            { iswritten(currentTimeTrack) && <CurrentTime currentTimeTrack={ currentTimeTrack }/> }
+          </div>
+          <ul className={ css.tracks }>
+            { tracks.map(this.renderTrack(currentTrack)) }
+          </ul>
+        </section>
       </main>
     );
   };
 
-  private renderNewTrackButton = (): ReactNode =>
-    <button type="button" onClick={ this.addNewTrack }>Add new track</button>;
+  private renderNewTrackButton = (): ReactNode => (
+    <button
+      className={ cn(css.button, css.buttonAdd) }
+      type="button"
+      onClick={ this.addNewTrack }
+    >
+      Add new track
+    </button>
+  );
 
   private renderStartButton = (inTracking: boolean): ReactNode => (
-    <button type="button" onClick={ inTracking ? this.stopTrack : this.startTrack }>
+    <button
+      className={ cn(css.button, css.buttonToggle) }
+      type="button"
+      onClick={ inTracking ? this.stopTrack : this.startTrack }
+    >
       { inTracking ? 'Stop' : 'Start' }
     </button>
   );
@@ -98,15 +115,16 @@ class AppComponent extends PureComponent<TAppProps> {
   private renderTrack = (currentTrack: ITrack | null) => (track: ITrack): ReactNode => {
     const { id, name, timeTracks } = track;
     const isActive = track === currentTrack;
+    const cnActive = isActive ? css.trackActive : null;
 
     return (
       <li key={ id }>
         <button
+          className={ cn(css.track, cnActive) }
           type="button"
           onClick={ this.setCurrentTrack(id) }
-          style={ isActive ? { border: '1px solid red' } : {} }
         >
-          { name } - { this.renderTime(timeTracks) } sec
+          { name }: { this.renderTime(timeTracks) } sec
         </button>
       </li>
     );
