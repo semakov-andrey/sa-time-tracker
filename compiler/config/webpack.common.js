@@ -19,10 +19,11 @@ export const webpackConfigCommon = () => ({
     rules: [
       {
         test: /\.tsx?$/u,
-        loader: 'ts-loader',
+        loader: 'esbuild-loader',
         exclude: /node_modules/u,
         options: {
-          transpileOnly: true
+          loader: 'tsx',
+          target: 'es2020'
         }
       }
     ]
