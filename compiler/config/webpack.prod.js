@@ -1,14 +1,12 @@
 import path from 'path';
 
 import autoprefixer from 'autoprefixer';
-import cssnano from 'cssnano';
+import { ESBuildMinifyPlugin } from 'esbuild-loader';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import PostCSSAssetsPlugin from 'postcss-assets-webpack-plugin';
 import postcssCustomMedia from 'postcss-custom-media';
 import postcssNested from 'postcss-nested';
 import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
-import TerserPlugin from 'terser-webpack-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { merge } from 'webpack-merge';
@@ -104,30 +102,10 @@ export const webpackConfig = () =>
     ],
     optimization: {
       minimizer: [
-        new TerserPlugin({
-          parallel: true,
-          terserOptions: {
-            output: {
-              comments: false
-            }
-          },
-          extractComments: false
-        }),
-        new PostCSSAssetsPlugin({
-          test: /\.css$/u,
-          log: false,
-          plugins: [
-            cssnano({
-              preset: [ 'default', {
-                discardComments: {
-                  removeAll: true
-                },
-                minifyFontValues: {
-                  removeQuotes: false
-                }
-              } ]
-            })
-          ]
+        new ESBuildMinifyPlugin({
+          target: 'es2020',
+          legalComments: 'none',
+          css: true
         })
       ]
     },
