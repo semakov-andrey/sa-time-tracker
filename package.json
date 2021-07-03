@@ -7,8 +7,8 @@
   "scripts": {
     "start": "node --experimental-json-modules --no-warnings ./compiler/scripts/dev-server.js",
     "build": "node --experimental-json-modules --no-warnings ./compiler/scripts/build.js",
-    "stylelint": "stylelint ./src/interface/**/*.css -f verbose",
-    "stylelint-fix": "stylelint ./src/interface/**/*.css -f verbose --fix",
+    "stylelint": "stylelint './src/interface/**/*.css' -f verbose",
+    "stylelint-fix": "stylelint './src/interface/**/*.css' -f verbose --fix",
     "eslint": "eslint ./src/**/*.{ts,tsx}",
     "eslint-fix": "eslint ./src/**/*.{ts,tsx} --fix",
     "eslint-all": "eslint ./{compiler,src}/**/*.{cjs,js,jsx,ts,tsx} --no-error-on-unmatched-pattern --quiet",
@@ -68,6 +68,8 @@
     "log-update": "^4.0.0",
     "module-alias": "^2.2.2",
     "stylelint": "^13.13.1",
+    "stylelint-config-recess-order": "^2.4.0",
+    "stylelint-order": "^4.1.0",
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-dev-middleware": "^3.7.3",
     "webpack-hot-middleware": "^2.25.0"

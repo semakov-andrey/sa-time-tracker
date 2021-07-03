@@ -1,5 +1,6 @@
 {
   "defaultSeverity": "error",
+  "extends": ["stylelint-config-recess-order"],
   "rules": {
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
