@@ -1,5 +1,7 @@
 import React, { PureComponent } from 'react';
 
+import { css } from './CurrentTime.css';
+
 import type { ITimeTrack } from 'entities/TimeTrack';
 import type { ReactNode } from 'react';
 
@@ -29,8 +31,8 @@ export class CurrentTime extends PureComponent<ICurrentTimeProps> {
   public render = (): ReactNode => {
     const divider = 1000;
     const { currentTimeTrack: { startTime } } = this.props;
-    const time = ((new Date()).getTime() - startTime.getTime()) / divider;
+    const time = (((new Date()).getTime() - startTime.getTime()) / divider).toFixed(1);
 
-    return <time>Passed: { time } sec</time>;
+    return <time className={ css.time }>Passed: { time } sec</time>;
   };
 };

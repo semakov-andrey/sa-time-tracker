@@ -33,6 +33,7 @@
   &:hover,
   &:active,
   &:focus {
+    color: inherit;
     outline: 0;
     box-shadow: 0 0 0 2px var(--color-d33);
   }
@@ -67,6 +68,10 @@
   background: transparent;
   border: 0;
   appearance: none;
+
+  &:active {
+    color: inherit;
+  }
 
   &:focus {
     outline: 0;
