@@ -1,5 +1,4 @@
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 
 import packageJSON from '../../package.json';
 import { getAlises } from '../utils/common.js';
@@ -29,9 +28,6 @@ export const webpackConfigCommon = () => ({
     ]
   },
   plugins: [
-    new ScriptExtHtmlWebpackPlugin({
-      defaultAttribute: 'defer'
-    }),
     new ForkTsCheckerWebpackPlugin()
   ],
   resolve: {

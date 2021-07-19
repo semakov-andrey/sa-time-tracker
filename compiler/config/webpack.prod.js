@@ -6,7 +6,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import postcssCustomMedia from 'postcss-custom-media';
 import postcssNested from 'postcss-nested';
-import ScriptExtHtmlWebpackPlugin from 'script-ext-html-webpack-plugin';
 import webpack from 'webpack';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { merge } from 'webpack-merge';
@@ -81,9 +80,6 @@ export const webpackConfig = () =>
           removeAttributeQuotes: true,
           removeOptionalTags: true
         }
-      }),
-      new ScriptExtHtmlWebpackPlugin({
-        defaultAttribute: 'defer'
       }),
       new MiniCssExtractPlugin({
         filename: `${ dirs.assets }[name].[contenthash:8].css`

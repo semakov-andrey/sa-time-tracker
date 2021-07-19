@@ -15,14 +15,6 @@ await cssTypes.start();
 
 logger('dev server', port)();
 
-const serverOptions = {
-  stats: 'minimal',
-  watchOptions: {
-    aggregateTimeout: 300,
-    poll: 1000
-  }
-};
-
 const server = express();
 
 server.use((req, res, next) => {
@@ -33,7 +25,7 @@ server.use((req, res, next) => {
 });
 
 const compilerClient = webpack(await webpackConfig());
-server.use(webpackDevMiddleware(compilerClient, serverOptions));
+server.use(webpackDevMiddleware(compilerClient, { stats: 'minimal' }));
 server.use(webpackHotMiddleware(compilerClient, { log: false }));
 
 server.listen(port);
