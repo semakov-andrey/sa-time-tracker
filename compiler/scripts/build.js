@@ -5,7 +5,7 @@ import webpack from 'webpack';
 
 import packageJSON from '../../package.json';
 import { webpackConfig } from '../config/webpack.prod.js';
-import { statsOptions } from '../utils/common.js';
+import { isset, statsOptions } from '../utils/common.js';
 import { CssTypes } from '../utils/css-types.js';
 
 const { config: { directories: dirs, isReact } } = packageJSON;
@@ -23,7 +23,7 @@ await cssTypes.start();
 compilerClient.run(async (error, stats) => {
   if (error instanceof Error) {
     console.error(error.stack ?? error);
-    if (typeof error.details !== 'undefined') {
+    if (isset(error.details)) {
       console.error(error.details);
     }
   } else {
