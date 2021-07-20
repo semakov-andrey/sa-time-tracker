@@ -1,7 +1,9 @@
+import CopyWebpackPlugin from 'copy-webpack-plugin';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 
 import packageJSON from '../../package.json';
 import { getAlises } from '../utils/common.js';
+import { ServiceWorkerPlugin } from '../utils/service-worker-plugin.js';
 
 const { config: { directories: dirs } } = packageJSON;
 
@@ -28,7 +30,13 @@ export const webpackConfigCommon = () => ({
     ]
   },
   plugins: [
-    new ForkTsCheckerWebpackPlugin()
+    new ForkTsCheckerWebpackPlugin(),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: `${ dirs.source }/sw.js`, to: 'sw.js' }
+      ]
+    }),
+    new ServiceWorkerPlugin()
   ],
   resolve: {
     extensions: [
