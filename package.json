@@ -82,7 +82,7 @@
     "webpack-hot-middleware": "^2.25.0"
   },
   "config": {
-    "devPort": 3000,
+    "devPort": 80,
     "entries": {
       "index": "index"
     },

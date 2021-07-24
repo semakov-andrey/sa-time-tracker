@@ -40,7 +40,7 @@ export class Favicon {
   tapIcon(
     icon,
     compilation,
-    { html, manifestIconsPWA, manifestIconsMacOS }
+    { html, manifestIconsMacOS, manifestIconsPWA }
   ) {
     let buffer;
     try {
@@ -71,8 +71,8 @@ export class Favicon {
       html.push(`<link href="/${ asset.url }" rel="apple-touch-icon">`);
     }
 
-    if (name.includes('pwa')) {
-      manifestIconsPWA.push({
+    if (name.includes('macos')) {
+      manifestIconsMacOS.push({
         sizes: `${ width }x${ height }`,
         src: `/${ dirs.assets }${ name }${ hash }.${ extension }`,
         type: `image/${ extension }`,
@@ -80,8 +80,8 @@ export class Favicon {
       });
     }
 
-    if (name.includes('macos')) {
-      manifestIconsMacOS.push({
+    if (name.includes('pwa')) {
+      manifestIconsPWA.push({
         sizes: `${ width }x${ height }`,
         src: `/${ dirs.assets }${ name }${ hash }.${ extension }`,
         type: `image/${ extension }`,
@@ -96,7 +96,7 @@ export class Favicon {
     const path = `assets/manifest${ hash }.json`;
     const source1 = JSON.stringify({ ...this.manifest, icons: icons1 }, null, spaces);
     this.pushAsset(compilation, {
-      url: `assets/manifest${ hash === '' ? '' : '-pwa' }${ hash }.json`,
+      url: `assets/manifest${ hash }.json`,
       source: source1,
       size: source1.length
     });
@@ -105,7 +105,7 @@ export class Favicon {
     }
     const source2 = JSON.stringify({ ...this.manifest, icons: icons2 }, null, spaces);
     this.pushAsset(compilation, {
-      url: `assets/manifest-macos${ hash }.json`,
+      url: `assets/manifest-pwa${ hash }.json`,
       source: source2,
       size: source2.length
     });
@@ -119,9 +119,9 @@ export class Favicon {
       const manifestIconsPWA = [];
       const manifestIconsMacOS = [];
       this.icons.forEach((icon) => {
-        this.tapIcon(icon, compilation, { html, manifestIconsPWA, manifestIconsMacOS });
+        this.tapIcon(icon, compilation, { html, manifestIconsMacOS, manifestIconsPWA });
       });
-      const manifestURL = this.tapManifest(compilation, manifestIconsPWA, manifestIconsMacOS);
+      const manifestURL = this.tapManifest(compilation, manifestIconsMacOS, manifestIconsPWA);
 
       HtmlWebpackPlugin
         .getHooks(compilation)
@@ -137,8 +137,8 @@ export class Favicon {
             return a[1] > b[1] ? -1 : a[1] < b[1] ? 1 : 0;
           });
           htmlPluginData.html = !this.hash
-            ? htmlPluginData.html.replace(/<\/head>/iu, `${ html.join('') }</head>`)
-            : htmlPluginData.html.replace(/<div class=app/iu, `${ html.join('') }<div class=app`);
+            ? htmlPluginData.html.replace(/(<\/head>)/iu, `${ html.join('') }$1`)
+            : htmlPluginData.html.replace(/(<section class=app)/iu, `${ html.join('') }$1`);
           callback(null, htmlPluginData);
         });
     });

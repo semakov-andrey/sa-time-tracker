@@ -78,7 +78,7 @@ export const webpackConfig = () =>
           minifyCSS: true,
           minifyJS: true,
           removeAttributeQuotes: true,
-          removeOptionalTags: true
+          removeOptionalTags: false
         }
       }),
       new MiniCssExtractPlugin({
