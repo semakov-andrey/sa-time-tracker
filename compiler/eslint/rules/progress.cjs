@@ -1,6 +1,6 @@
-const path = require('path');
 const CLIOptions = require('eslint/lib/options');
 const logUpdate = require('log-update');
+const fg = require('fast-glob');
 
 let options;
 let files;
@@ -12,7 +12,10 @@ module.exports = {
       try {
         options = CLIOptions.parse(process.argv);
         if (options && Array.isArray(options._)) {
-          files = options._.map((file) => path.resolve(file));
+          files = fg.sync(options._, {
+            absolute: true,
+            ignore: [ '**/node_modules/**', '**/build/**' ]
+          }).sort();
         }
       } catch (error) {
         console.error(error.message);

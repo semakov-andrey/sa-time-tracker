@@ -15,10 +15,10 @@
     "analyze-bundle": "webpack-bundle-analyzer build/stats.json",
     "stylelint": "stylelint './src/**/*.css' -f verbose",
     "stylelint-fix": "stylelint './src/**/*.css' -f verbose --fix",
-    "eslint": "eslint ./src/**/*.{ts,tsx}",
-    "eslint-fix": "eslint ./src/**/*.{ts,tsx} --fix",
-    "eslint-all": "eslint ./{compiler,src}/**/*.{cjs,js,jsx,ts,tsx} --no-error-on-unmatched-pattern --quiet",
-    "eslint-all-fix": "eslint ./{compiler,src}/**/*.{cjs,js,jsx,ts,tsx} --no-error-on-unmatched-pattern --quiet --fix"
+    "eslint": "eslint './src/**/*.{ts,tsx}'",
+    "eslint-fix": "eslint './src/**/*.{ts,tsx}' --fix",
+    "eslint-all": "eslint './{compiler,src}/**/*.{cjs,js,jsx,ts,tsx}' --no-error-on-unmatched-pattern --quiet",
+    "eslint-all-fix": "eslint './{compiler,src}/**/*.{cjs,js,jsx,ts,tsx}' --no-error-on-unmatched-pattern --quiet --fix"
   },
   "keywords": [
     "time-tracker"
