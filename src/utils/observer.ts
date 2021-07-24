@@ -35,6 +35,8 @@ export function observe() {
 
     const previousValue = { ...target[propertyName] };
     let t: PureComponent;
+    // need to get unbound method
+    // eslint-disable-next-line
     const { componentDidMount } = target;
     target.componentDidMount = function (): void {
       if (isset(componentDidMount)) componentDidMount.call(this);

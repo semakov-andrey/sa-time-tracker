@@ -555,7 +555,7 @@ module.exports = {
             propertyDeclaration: true
           }
         ],
-        // '@typescript-eslint/unbound-method': [ 'error', { ignoreStatic: true } ],
+        '@typescript-eslint/unbound-method': [ 'error', { ignoreStatic: true } ],
         '@typescript-eslint/unified-signatures': 'error',
 
         'comma-dangle': 'off',
