@@ -21,11 +21,13 @@ export const logger = (name, port) => () => {
   const local = `http://localhost:${ port }`;
   const length = [ local, ...addresses ]
     .reduce((acc, current) => current.length > acc ? current.length : acc, 0);
-  const underline = new Array(11 + length).join('-');
+  const hyphensAmount = 11;
+  const spacesAmount = 4;
+  const underline = new Array(hyphensAmount + length).join('-');
 
   eazyLoggerInstance.info(`Runned ${ name }:`);
   eazyLoggerInstance.info('{grey:%s}', underline);
-  eazyLoggerInstance.info('%s: {red:%s}', `${ new Array(4).join(' ') }Local`, local);
+  eazyLoggerInstance.info('%s: {red:%s}', `${ new Array(spacesAmount).join(' ') }Local`, local);
   addresses.forEach((address) => eazyLoggerInstance.info('%s: {red:%s}', 'External', address));
   eazyLoggerInstance.info('{grey:%s}', underline);
 };

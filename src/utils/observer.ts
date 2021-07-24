@@ -34,16 +34,17 @@ export function observe() {
     if (!isKeyOfObject(target, propertyName) || !isTypeObject(target[propertyName])) return;
 
     const previousValue = { ...target[propertyName] };
-    let self: PureComponent;
+    let t: PureComponent;
     const { componentDidMount } = target;
     target.componentDidMount = function (): void {
       if (isset(componentDidMount)) componentDidMount.call(this);
-      self = this;
+      const self = this;
+      t = self;
     };
 
     listeners.push((): void => {
-      if (!isset(self) || compareObjects(previousValue, target[propertyName])) return;
-      self.forceUpdate();
+      if (!isset(t) || compareObjects(previousValue, target[propertyName])) return;
+      t.forceUpdate();
     });
   };
 };
