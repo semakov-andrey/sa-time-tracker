@@ -1,4 +1,6 @@
 require('module-alias/register');
+const INDENT = 2;
+const MAX_CLASSES_PER_FILE = 4;
 
 module.exports = {
   env: { browser: true, node: true, es6: true },
@@ -85,7 +87,7 @@ module.exports = {
     'eqeqeq': 'error',
     'grouped-accessor-pairs': [ 'error', 'getBeforeSet' ],
     'guard-for-in': 'error',
-    'max-classes-per-file': [ 'error', 4 ],
+    'max-classes-per-file': [ 'error', MAX_CLASSES_PER_FILE ],
     'no-alert': 'error',
     'no-caller': 'error',
     'no-case-declarations': 'error',
@@ -178,7 +180,7 @@ module.exports = {
     'func-name-matching': [ 'error', { considerPropertyDescriptor: true } ],
     'function-call-argument-newline': [ 'error', 'consistent' ],
     'function-paren-newline': [ 'error', 'consistent' ],
-    'indent': [ 'error', 2 ],
+    'indent': [ 'error', INDENT ],
     'jsx-quotes': [ 'error', 'prefer-double' ],
     'key-spacing': 'error',
     'keyword-spacing': 'error',
@@ -386,8 +388,8 @@ module.exports = {
         'react/jsx-filename-extension': [ 'error', { extensions: [ '.jsx', '.tsx' ] } ],
         'react/jsx-first-prop-new-line': [ 'error', 'multiline-multiprop' ],
         'react/jsx-fragments': [ 'error', 'syntax' ],
-        'react/jsx-indent': [ 'error', 2, { checkAttributes: true } ],
-        'react/jsx-indent-props': [ 'error', 2 ],
+        'react/jsx-indent': [ 'error', INDENT, { checkAttributes: true } ],
+        'react/jsx-indent-props': [ 'error', INDENT ],
         'react/jsx-key': [ 'error', { checkFragmentShorthand: true } ],
         'react/jsx-max-depth': [ 'error', { max: 10 } ],
         'react/jsx-max-props-per-line': [ 'error', { maximum: 4 } ],
@@ -585,7 +587,7 @@ module.exports = {
         '@typescript-eslint/comma-dangle': [ 'error', 'never' ],
         '@typescript-eslint/comma-spacing': [ 'error', { before: false, after: true } ],
         '@typescript-eslint/func-call-spacing': [ 'error', 'never' ],
-        '@typescript-eslint/indent': [ 'error', 2 ],
+        '@typescript-eslint/indent': [ 'error', INDENT ],
         '@typescript-eslint/keyword-spacing': 'error',
         '@typescript-eslint/lines-between-class-members': [ 'error', 'always' ],
         '@typescript-eslint/no-array-constructor': 'error',
