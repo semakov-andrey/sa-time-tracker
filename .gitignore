@@ -10,3 +10,10 @@ bash.exe.stackdump
 .editorconfig
 .yo-rc.json
 *.css.d.ts
+.yarn/*
+!.yarn/patches
+!.yarn/releases
+!.yarn/plugins
+!.yarn/sdks
+!.yarn/versions
+.pnp.*

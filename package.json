@@ -102,5 +102,6 @@
   "lint-staged": {
     "src/**/*.css": "stylelint --fix",
     "src/**/*.{ts,tsx}": "eslint --fix"
-  }
+  },
+  "packageManager": "yarn@3.0.0"
 }
