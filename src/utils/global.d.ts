@@ -10,4 +10,6 @@ interface ObjectConstructor {
   values<T>(o: T): Array<T[keyof T]>;
 
   entries<T>(o: T): Array<EntryOf<T>>;
+
+  fromEntries<T>(entries: Array<EntryOf<T>>): T;
 }

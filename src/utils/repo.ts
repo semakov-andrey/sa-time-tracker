@@ -17,8 +17,8 @@ export const repoFactory = <S, A, T extends ((state: IStates) => S)>(
           key,
           (...args: Parameters<TActionCreator>): Action =>
             (store.dispatch as Dispatch<Action>)((value as unknown as TActionCreator)(...args))
-        ])
-  ) as unknown as A;
+        ] as unknown as EntryOf<A>)
+  );
   const mappedObject = {
     ...states,
     ...actions
