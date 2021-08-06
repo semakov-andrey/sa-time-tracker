@@ -49,7 +49,7 @@
     "declaration-colon-space-after": "always-single-line",
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": "never",
-    "font-family-name-quotes": "always-where-recommended",
+    "font-family-name-quotes": "always-where-required",
     "font-family-no-duplicate-names": true,
     "font-family-no-missing-generic-family-keyword": true,
     "font-weight-notation": "numeric",

@@ -1,3 +1,5 @@
+type ObjectKey = string | number | symbol;
+
 type Nullable<T> = T | null;
 
 type Optional<T> = T | undefined;
