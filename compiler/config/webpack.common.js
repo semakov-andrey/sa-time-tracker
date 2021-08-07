@@ -26,6 +26,33 @@ export const webpackConfigCommon = () => ({
           loader: 'tsx',
           target: 'es2020'
         }
+      },
+      {
+        test: /\.svg$/u,
+        use: [
+          {
+            loader: 'esbuild-loader',
+            options: {
+              loader: 'jsx',
+              target: 'es2020'
+            }
+          },
+          './compiler/utils/named-export-svg-loader.cjs',
+          {
+            loader: 'react-svg-loader',
+            options: {
+              jsx: true,
+              svgo: {
+                plugins: [
+                  { removeViewBox: false },
+                  { convertColors: { shorthex: true } },
+                  { removeEmptyAttrs: false },
+                  { cleanupIDs: false }
+                ]
+              }
+            }
+          }
+        ]
       }
     ]
   },
