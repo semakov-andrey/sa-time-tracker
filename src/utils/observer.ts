@@ -2,7 +2,7 @@ import { PureComponent } from 'react';
 
 import { store } from 'store/store';
 
-import { isKeyOfObject, isset, isTypeObject, TObjectKey } from './guards';
+import { isKeyOfObject, isset, isTypeObject } from './guards';
 
 type TListener = () => void;
 
@@ -15,8 +15,8 @@ store.subscribe((): void => {
 });
 
 const compareObjects = (
-  x: Record<TObjectKey, unknown>,
-  y: Record<TObjectKey, unknown>
+  x: Record<ObjectKey, unknown>,
+  y: Record<ObjectKey, unknown>
 ): boolean => {
   for (const p in x) {
     if (Object.prototype.hasOwnProperty.call(x, p)) {
