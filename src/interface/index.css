@@ -9,6 +9,12 @@ body {
   font: 400 16px/1.5 Helvetica, Arial, sans-serif;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 :global {
   .app {
     width: 100%;

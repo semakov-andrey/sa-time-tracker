@@ -1,15 +1,40 @@
 .main {
-  display: flex;
-  width: 100%;
-  height: 100%;
   --padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: center;
+  width: 300px;
+  height: 100%;
+  margin: auto;
+}
+
+.header {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 8px 11px;
+  background: var(--color-ddd);
+  border: 1px solid var(--color-000);
+  border-radius: 4px;
+}
+
+.logo {
+  width: 32px;
+  height: 32px;
+}
+
+.title {
+  padding-top: 2px;
+  margin: 0;
+  font-size: 20px;
+  font-weight: 400;
 }
 
 .time-tracker {
-  width: 300px;
+  width: 100%;
   height: 400px;
   padding: var(--padding);
-  margin: auto;
   background: var(--color-ddd);
   border: 1px solid var(--color-000);
   border-radius: 4px;

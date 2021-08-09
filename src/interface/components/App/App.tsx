@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader/root';
 
 import { Tracking } from 'domain/Tracking';
+import { SvgLogo } from 'interface/assets/icons/logo.svg';
 import { CurrentTime } from 'interface/components/CurrentTime/CurrentTime';
 import { STrackingRepo } from 'interface/interfaces/trackingRepo';
 import { cn } from 'utils/classnames';
@@ -76,6 +77,10 @@ class AppComponent extends PureComponent<TAppProps> {
 
     return (
       <main className={ css.main }>
+        <header className={ css.header }>
+          <SvgLogo className={ css.logo }/>
+          <h1 className={ css.title }>Time Tracker</h1>
+        </header>
         <section className={ css.timeTracker }>
           <div className={ css.buttons }>
             { this.renderNewTrackButton() }
