@@ -1,5 +1,3 @@
-declare module '*.svg';
-
 type ObjectKey = string | number | symbol;
 
 type Nullable<T> = T | null;

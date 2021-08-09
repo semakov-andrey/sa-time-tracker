@@ -7,11 +7,15 @@ import packageJSON from '../../package.json';
 import { webpackConfig } from '../config/webpack.dev.js';
 import { CssTypes } from '../utils/css-types.js';
 import { logger } from '../utils/logger.js';
+import { SvgIcons } from '../utils/svg-icons.js';
 
 const { config: { directories: dirs, devPort: port } } = packageJSON;
 
 const cssTypes = new CssTypes(false, dirs.source, 'css');
 await cssTypes.start();
+
+const svgIcons = new SvgIcons(dirs.source, 'interface/assets/icons', 'utils/icons.d.ts');
+await svgIcons.start();
 
 logger('dev server', port)();
 

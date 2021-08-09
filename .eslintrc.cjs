@@ -246,7 +246,7 @@ module.exports = {
     ],
     'prefer-object-spread': 'error',
     'quote-props': [ 'error', 'consistent-as-needed' ],
-    'quotes': [ 'error', 'single', { avoidEscape: true } ],
+    'quotes': [ 'error', 'single', { avoidEscape: true, allowTemplateLiterals: true } ],
     'semi': [ 'error', 'always', { omitLastInOneLineBlock: false } ],
     'semi-spacing': 'error',
     'semi-style': [ 'error', 'last' ],
