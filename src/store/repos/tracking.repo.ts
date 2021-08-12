@@ -42,7 +42,7 @@ const mapActions: IMapActions = {
 };
 
 export const trackingRepo = (): IMapStates & IMapActions =>
-  repoFactory<IMapStates, IMapActions, (s: IStates) => IMapStates>(mapStates, mapActions);
+  repoFactory(mapStates, mapActions);
 
 iocContainer.set(STrackingRepo, trackingRepo);
 

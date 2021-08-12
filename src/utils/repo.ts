@@ -5,7 +5,11 @@ import { store } from 'store/store';
 
 type TActionCreator = (...args: Array<unknown>) => Action;
 
-export const repoFactory = <S, A, T extends ((state: IStates) => S)>(
+export const repoFactory = <
+  T extends ((state: IStates) => S),
+  A,
+  S = ReturnType<T>
+>(
   mapStates: T,
   mapActions: A
 ): S & A => {
