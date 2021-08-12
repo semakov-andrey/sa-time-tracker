@@ -466,7 +466,7 @@ module.exports = {
             }
           }
         ],
-        // '@typescript-eslint/consistent-indexed-object-style': [ 'error', 'record' ],
+        '@typescript-eslint/consistent-indexed-object-style': [ 'error', 'record' ],
         '@typescript-eslint/consistent-type-assertions': [
           'error',
           { assertionStyle: 'as', objectLiteralTypeAssertions: 'allow' }
@@ -516,12 +516,12 @@ module.exports = {
         '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
         '@typescript-eslint/no-unnecessary-condition': 'error',
         '@typescript-eslint/no-unnecessary-type-arguments': 'error',
-        // '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+        '@typescript-eslint/no-unnecessary-type-assertion': 'error',
         '@typescript-eslint/no-unnecessary-type-constraint': 'error',
-        // '@typescript-eslint/no-unsafe-assignment': 'error',
-        // '@typescript-eslint/no-unsafe-call': 'error',
-        // '@typescript-eslint/no-unsafe-member-access': 'error',
-        // '@typescript-eslint/no-unsafe-return': 'error',
+        '@typescript-eslint/no-unsafe-assignment': 'error',
+        '@typescript-eslint/no-unsafe-call': 'error',
+        '@typescript-eslint/no-unsafe-member-access': 'error',
+        '@typescript-eslint/no-unsafe-return': 'error',
         '@typescript-eslint/prefer-as-const': 'error',
         '@typescript-eslint/prefer-enum-initializers': 'error',
         '@typescript-eslint/prefer-includes': 'error',

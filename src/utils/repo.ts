@@ -3,9 +3,7 @@ import { Action, Dispatch } from 'redux';
 import { IStates } from 'store/states';
 import { store } from 'store/store';
 
-type A<Params> = {
-  [k: string]: (...args: Array<Params>) => Action
-};
+type A<Params> = Record<string, (...args: Array<Params>) => Action>;
 
 export const repoFactory = <
   T extends ((state: IStates) => S),

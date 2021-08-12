@@ -25,7 +25,7 @@ export function inject(token: symbol) {
       configurable: true,
       enumerable: true,
       writable: false,
-      value: iocContainer.get(token)
+      value: iocContainer.get<unknown>(token)
     });
   };
 };

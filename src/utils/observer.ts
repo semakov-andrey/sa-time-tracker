@@ -33,7 +33,7 @@ export function observe() {
   return function (target: PureComponent, propertyName: string): void {
     if (!isKeyOfObject(target, propertyName) || !isTypeObject(target[propertyName])) return;
 
-    const previousValue = { ...target[propertyName] };
+    const previousValue = { ...target[propertyName] as Record<ObjectKey, unknown> };
     let t: PureComponent;
     // need to get unbound method
     // eslint-disable-next-line
