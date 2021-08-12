@@ -3,25 +3,27 @@ import { Action, Dispatch } from 'redux';
 import { IStates } from 'store/states';
 import { store } from 'store/store';
 
-type TActionCreator = (...args: Array<unknown>) => Action;
+type A<Params> = {
+  [k: string]: (...args: Array<Params>) => Action
+};
 
 export const repoFactory = <
   T extends ((state: IStates) => S),
-  A,
+  Params,
   S = ReturnType<T>
 >(
   mapStates: T,
-  mapActions: A
-): S & A => {
+  mapActions: A<Params>
+): S & A<Params> => {
   const states = mapStates(store.getState());
-  const actions = Object.fromEntries(
-    Object.entries(mapActions)
-      .map(([ key, value ]: EntryOf<A>) =>
+  const actions = Object.fromEntries<A<Params>>(
+    Object.entries<A<Params>>(mapActions)
+      .map(([ key, value ]: EntryOf<A<Params>>) =>
         [
           key,
-          (...args: Parameters<TActionCreator>): Action =>
-            (store.dispatch as Dispatch<Action>)((value as unknown as TActionCreator)(...args))
-        ] as unknown as EntryOf<A>)
+          (...args: Array<Params>): Action =>
+            (store.dispatch as Dispatch<Action>)(value(...args))
+        ])
   );
   const mappedObject = {
     ...states,

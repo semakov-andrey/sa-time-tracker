@@ -466,7 +466,7 @@ module.exports = {
             }
           }
         ],
-        '@typescript-eslint/consistent-indexed-object-style': [ 'error', 'record' ],
+        // '@typescript-eslint/consistent-indexed-object-style': [ 'error', 'record' ],
         '@typescript-eslint/consistent-type-assertions': [
           'error',
           { assertionStyle: 'as', objectLiteralTypeAssertions: 'allow' }

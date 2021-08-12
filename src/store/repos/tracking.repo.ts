@@ -1,3 +1,5 @@
+import { Action } from 'redux';
+
 import { STrackingRepo } from 'interface/interfaces/trackingRepo';
 import {
   addNewTrack,
@@ -10,39 +12,24 @@ import { repoFactory } from 'utils/repo';
 
 import type { ITimeTrack } from 'entities/TimeTrack';
 import type { ITrack } from 'entities/Track';
-import type {
-  IAddNewTrack,
-  ISetCurrentTrack,
-  ISetCurrentTimeTrack,
-  ISetInTracking
-} from 'store/actions/tracking.actions';
 import type { IStates } from 'store/states';
 
-interface IMapStates {
-  tracks: Array<ITrack>;
-  currentTrack: Nullable<ITrack>;
-  currentTimeTrack: Nullable<ITimeTrack>;
-  inTracking: boolean;
-};
+type ParamsState = Array<ITrack> & Nullable<ITrack> & Nullable<ITimeTrack> & boolean;
+type ParamsActions = ITrack & Nullable<ITimeTrack> & boolean;
 
-interface IMapActions {
-  addNewTrack: (newTrack: ITrack) => IAddNewTrack;
-  setCurrentTrack: (currentTrack: Nullable<ITrack>) => ISetCurrentTrack;
-  setCurrentTimeTrack: (currentTimeTrack: Nullable<ITimeTrack>) => ISetCurrentTimeTrack;
-  setInTracking: (inTrackingValue: boolean) => ISetInTracking;
-};
+type TMapStates = Record<string, ParamsState>;
+type TMapActions = Record<string, (...args: Array<ParamsActions>) => Action>;
 
-const mapStates = ({ tracking }: IStates): IMapStates => tracking;
-
-const mapActions: IMapActions = {
+const mapStates = ({ tracking }: IStates): TMapStates => tracking as unknown as TMapStates;
+const mapActions: TMapActions = {
   addNewTrack,
   setCurrentTrack,
   setCurrentTimeTrack,
   setInTracking
 };
 
-export const trackingRepo = (): IMapStates & IMapActions =>
-  repoFactory(mapStates, mapActions);
+export const trackingRepo = (): TMapStates & TMapActions =>
+  repoFactory<(state: IStates) => TMapStates, ParamsActions>(mapStates, mapActions);
 
 iocContainer.set(STrackingRepo, trackingRepo);
 
