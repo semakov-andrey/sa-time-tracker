@@ -10,15 +10,10 @@ import {
 import { iocContainer } from 'utils/di';
 import { repoFactory } from 'utils/repo';
 
-import type { ITimeTrack } from 'entities/TimeTrack';
-import type { ITrack } from 'entities/Track';
 import type { IStates } from 'store/states';
 
-type ParamsState = Array<ITrack> | Nullable<ITrack> | Nullable<ITimeTrack> | boolean;
-type ParamsActions = ITrack & Nullable<ITimeTrack> & boolean;
-
-type TMapStates = Record<string, ParamsState>;
-type TMapActions = Record<string, (...args: Array<ParamsActions>) => Action>;
+type TMapStates = Record<string, unknown>;
+type TMapActions = Record<string, (...args: Array<never>) => Action>;
 
 const mapStates = ({ tracking: {
   tracks,
@@ -40,7 +35,7 @@ const mapActions: TMapActions = {
 };
 
 export const trackingRepo = (): TMapStates & TMapActions =>
-  repoFactory<(state: IStates) => TMapStates, ParamsActions>(mapStates, mapActions);
+  repoFactory(mapStates, mapActions);
 
 iocContainer.set(STrackingRepo, trackingRepo);
 
