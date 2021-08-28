@@ -24,11 +24,21 @@
       "WebWorker"
     ],
     "paths": {
-      "entities/*": [ "./src/entities/*" ],
-      "domain/*": [ "./src/domain/*" ],
-      "interface/*": [ "./src/interface/*" ],
-      "store/*": [ "./src/store/*" ],
-      "utils/*": [ "./src/utils/*" ]
+      "entities/*": [
+        "./src/entities/*"
+      ],
+      "domain/*": [
+        "./src/domain/*"
+      ],
+      "interface/*": [
+        "./src/interface/*"
+      ],
+      "store/*": [
+        "./src/store/*"
+      ],
+      "utils/*": [
+        "./src/utils/*"
+      ]
     }
   },
   "exclude": [
