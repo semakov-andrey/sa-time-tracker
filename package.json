@@ -4,8 +4,25 @@
   "version": "1.0.0",
   "description": "time-tracker-app",
   "themeColor": "#000000",
+  "keywords": [
+    "time-tracker"
+  ],
+  "author": "Semakov Andrey",
+  "type": "module",
+  "config": {
+    "devPort": 80,
+    "entries": {
+      "index": "index"
+    },
+    "directories": {
+      "source": "src",
+      "development": "tmp",
+      "production": "build",
+      "assets": "assets"
+    }
+  },
   "scripts": {
-    "install-compiler": "npx sa-bright-compiler@1.13.0",
+    "install-compiler": "npx sa-bright-compiler@1.15.0",
     "update-compiler": "npx sa-bright-compiler",
     "install-deps": "yarn",
     "check-deps": "npm-check-updates",
@@ -22,11 +39,6 @@
     "eslint-all": "eslint './{compiler,src}/**/*.{cjs,js,jsx,ts,tsx}' --no-error-on-unmatched-pattern --quiet",
     "eslint-all-fix": "eslint './{compiler,src}/**/*.{cjs,js,jsx,ts,tsx}' --no-error-on-unmatched-pattern --quiet --fix"
   },
-  "keywords": [
-    "time-tracker"
-  ],
-  "author": "Semakov Andrey",
-  "type": "module",
   "dependencies": {
     "@hot-loader/react-dom": "^17.0.1",
     "@types/react": "^17.0.14",
@@ -83,18 +95,6 @@
     "webpack-bundle-analyzer": "^4.4.2",
     "webpack-dev-middleware": "^5.0.0",
     "webpack-hot-middleware": "^2.25.0"
-  },
-  "config": {
-    "devPort": 80,
-    "entries": {
-      "index": "index"
-    },
-    "directories": {
-      "source": "src",
-      "development": "tmp",
-      "production": "build",
-      "assets": "assets"
-    }
   },
   "browserslist": [
     "> 0.5%"
