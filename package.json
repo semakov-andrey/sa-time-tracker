@@ -22,7 +22,7 @@
     }
   },
   "scripts": {
-    "install-compiler": "npx sa-bright-compiler@1.15.0",
+    "install-compiler": "npx sa-bright-compiler@1.16.0",
     "update-compiler": "npx sa-bright-compiler",
     "install-deps": "yarn",
     "check-deps": "npm-check-updates",
