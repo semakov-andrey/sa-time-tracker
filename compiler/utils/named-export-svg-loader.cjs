@@ -1,9 +1,9 @@
 const path = require('path');
 const fs = require('fs');
+const camelCase = require('camelcase');
 const packageJSON = require('../../package.json');
 
 const { config: { directories: dirs } } = packageJSON;
-const camelCase = require('camelcase');
 const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
 let icons = [];
