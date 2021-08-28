@@ -5,7 +5,7 @@
   "description": "time-tracker-app",
   "themeColor": "#000000",
   "scripts": {
-    "install-compiler": "npx sa-bright-compiler@1.7.0",
+    "install-compiler": "npx sa-bright-compiler@1.8.0",
     "update-compiler": "npx sa-bright-compiler",
     "install-deps": "yarn",
     "check-deps": "npm-check-updates",
