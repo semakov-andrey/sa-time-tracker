@@ -553,7 +553,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@hot-loader/react-dom@npm:^17.0.1":
+"@hot-loader/react-dom@npm:17.0.1":
   version: 17.0.1
   resolution: "@hot-loader/react-dom@npm:17.0.1"
   dependencies:
@@ -834,7 +834,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^17.0.9":
+"@types/react-dom@npm:17.0.9":
   version: 17.0.9
   resolution: "@types/react-dom@npm:17.0.9"
   dependencies:
@@ -843,7 +843,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-hot-loader@npm:^4.1.1":
+"@types/react-hot-loader@npm:4.1.1":
   version: 4.1.1
   resolution: "@types/react-hot-loader@npm:4.1.1"
   dependencies:
@@ -852,7 +852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:*, @types/react@npm:^17.0.14":
+"@types/react@npm:*, @types/react@npm:17.0.14":
   version: 17.0.14
   resolution: "@types/react@npm:17.0.14"
   dependencies:
@@ -893,7 +893,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.28.4":
+"@typescript-eslint/eslint-plugin@npm:4.28.4":
   version: 4.28.4
   resolution: "@typescript-eslint/eslint-plugin@npm:4.28.4"
   dependencies:
@@ -930,7 +930,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.28.4":
+"@typescript-eslint/parser@npm:4.28.4":
   version: 4.28.4
   resolution: "@typescript-eslint/parser@npm:4.28.4"
   dependencies:
@@ -1495,7 +1495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"autoprefixer@npm:^10.3.1":
+"autoprefixer@npm:10.3.1":
   version: 10.3.1
   resolution: "autoprefixer@npm:10.3.1"
   dependencies:
@@ -1771,17 +1771,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"camelcase@npm:6.2.0, camelcase@npm:^6.2.0":
+  version: 6.2.0
+  resolution: "camelcase@npm:6.2.0"
+  checksum: 8335cfd0ecc472eae685896a42afd8c9dacd193a91f569120b931c87deb053a1ba82102031b9b48a4dbc1d18066caeacf2e4ace8c3c7f0d02936d348dc0b5a87
+  languageName: node
+  linkType: hard
+
 "camelcase@npm:^5.3.1":
   version: 5.3.1
   resolution: "camelcase@npm:5.3.1"
   checksum: e6effce26b9404e3c0f301498184f243811c30dfe6d0b9051863bd8e4034d09c8c2923794f280d6827e5aa055f6c434115ff97864a16a963366fb35fd673024b
-  languageName: node
-  linkType: hard
-
-"camelcase@npm:^6.2.0":
-  version: 6.2.0
-  resolution: "camelcase@npm:6.2.0"
-  checksum: 8335cfd0ecc472eae685896a42afd8c9dacd193a91f569120b931c87deb053a1ba82102031b9b48a4dbc1d18066caeacf2e4ace8c3c7f0d02936d348dc0b5a87
   languageName: node
   linkType: hard
 
@@ -1854,7 +1854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"chokidar@npm:^3.4.2, chokidar@npm:^3.5.2":
+"chokidar@npm:3.5.2, chokidar@npm:^3.4.2":
   version: 3.5.2
   resolution: "chokidar@npm:3.5.2"
   dependencies:
@@ -1901,7 +1901,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"circular-dependency-plugin@npm:^5.2.2":
+"circular-dependency-plugin@npm:5.2.2":
   version: 5.2.2
   resolution: "circular-dependency-plugin@npm:5.2.2"
   peerDependencies:
@@ -2158,7 +2158,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"copy-webpack-plugin@npm:^9.0.1":
+"copy-webpack-plugin@npm:9.0.1":
   version: 9.0.1
   resolution: "copy-webpack-plugin@npm:9.0.1"
   dependencies:
@@ -2226,7 +2226,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"css-loader@npm:^6.1.0":
+"css-loader@npm:6.1.0":
   version: 6.1.0
   resolution: "css-loader@npm:6.1.0"
   dependencies:
@@ -2444,7 +2444,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"del@npm:^6.0.0":
+"del@npm:6.0.0":
   version: 6.0.0
   resolution: "del@npm:6.0.0"
   dependencies:
@@ -2645,7 +2645,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eazy-logger@npm:^3.1.0":
+"eazy-logger@npm:3.1.0":
   version: 3.1.0
   resolution: "eazy-logger@npm:3.1.0"
   dependencies:
@@ -2847,7 +2847,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-loader@npm:^2.13.1":
+"esbuild-loader@npm:2.13.1":
   version: 2.13.1
   resolution: "esbuild-loader@npm:2.13.1"
   dependencies:
@@ -2918,7 +2918,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-import-resolver-typescript@npm:^2.4.0":
+"eslint-import-resolver-typescript@npm:2.4.0":
   version: 2.4.0
   resolution: "eslint-import-resolver-typescript@npm:2.4.0"
   dependencies:
@@ -2944,7 +2944,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-import@npm:^2.23.4":
+"eslint-plugin-import@npm:2.23.4":
   version: 2.23.4
   resolution: "eslint-plugin-import@npm:2.23.4"
   dependencies:
@@ -2969,7 +2969,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.24.0":
+"eslint-plugin-react@npm:7.24.0":
   version: 7.24.0
   resolution: "eslint-plugin-react@npm:7.24.0"
   dependencies:
@@ -2991,7 +2991,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-rulesdir@npm:^0.2.0":
+"eslint-plugin-rulesdir@npm:0.2.0":
   version: 0.2.0
   resolution: "eslint-plugin-rulesdir@npm:0.2.0"
   checksum: 460090482ee3d216edde0b25b1f79ae4aece2e1b9083b25d5b3422df70ade5de6f947924eabd29dd3f452b93ccdf465ef89561d6ee0479310485da480aab504c
@@ -3042,7 +3042,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.31.0":
+"eslint@npm:7.31.0":
   version: 7.31.0
   resolution: "eslint@npm:7.31.0"
   dependencies:
@@ -3192,7 +3192,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"express@npm:^4.17.1":
+"express@npm:4.17.1":
   version: 4.17.1
   resolution: "express@npm:4.17.1"
   dependencies:
@@ -3258,7 +3258,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.5, fast-glob@npm:^3.2.7":
+"fast-glob@npm:3.2.7, fast-glob@npm:^3.1.1, fast-glob@npm:^3.2.5":
   version: 3.2.7
   resolution: "fast-glob@npm:3.2.7"
   dependencies:
@@ -3410,7 +3410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fork-ts-checker-webpack-plugin@npm:^6.2.12":
+"fork-ts-checker-webpack-plugin@npm:6.2.12":
   version: 6.2.12
   resolution: "fork-ts-checker-webpack-plugin@npm:6.2.12"
   dependencies:
@@ -3938,7 +3938,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"html-webpack-plugin@npm:^5.3.2":
+"html-webpack-plugin@npm:5.3.2":
   version: 5.3.2
   resolution: "html-webpack-plugin@npm:5.3.2"
   dependencies:
@@ -4060,7 +4060,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.1":
+"husky@npm:7.0.1":
   version: 7.0.1
   resolution: "husky@npm:7.0.1"
   bin:
@@ -4126,7 +4126,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"image-size@npm:^1.0.0":
+"image-size@npm:1.0.0":
   version: 1.0.0
   resolution: "image-size@npm:1.0.0"
   dependencies:
@@ -4861,7 +4861,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"lint-staged@npm:^11.0.1":
+"lint-staged@npm:11.0.1":
   version: 11.0.1
   resolution: "lint-staged@npm:11.0.1"
   dependencies:
@@ -5034,7 +5034,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"log-update@npm:^4.0.0":
+"log-update@npm:4.0.0, log-update@npm:^4.0.0":
   version: 4.0.0
   resolution: "log-update@npm:4.0.0"
   dependencies:
@@ -5395,7 +5395,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"mini-css-extract-plugin@npm:^2.1.0":
+"mini-css-extract-plugin@npm:2.1.0":
   version: 2.1.0
   resolution: "mini-css-extract-plugin@npm:2.1.0"
   dependencies:
@@ -5533,7 +5533,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"module-alias@npm:^2.2.2":
+"module-alias@npm:2.2.2":
   version: 2.2.2
   resolution: "module-alias@npm:2.2.2"
   checksum: 4b5543f834b484033e5bd184096ca8276b9195e32e88883ee6ea8d3a4789d97c470d26f5fa7271bd7a26588bf67e4d27dbdb594ee327aef1c9619d855dc78342
@@ -5718,7 +5718,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"normalize.css@npm:^8.0.1":
+"normalize.css@npm:8.0.1":
   version: 8.0.1
   resolution: "normalize.css@npm:8.0.1"
   checksum: 4698cae88ec35e3f3e82f9f9402e6ffb906c27ccd6373cad88e6b3f5634fc7a043cb38702472299e5edb73825cf8b18d5fd9283f58829eddda79ea97453049a2
@@ -5734,7 +5734,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"npm-check-updates@npm:^11.8.3":
+"npm-check-updates@npm:11.8.3":
   version: 11.8.3
   resolution: "npm-check-updates@npm:11.8.3"
   dependencies:
@@ -6355,7 +6355,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss-custom-media@npm:^8.0.0":
+"postcss-custom-media@npm:8.0.0":
   version: 8.0.0
   resolution: "postcss-custom-media@npm:8.0.0"
   peerDependencies:
@@ -6385,7 +6385,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss-loader@npm:^6.1.1":
+"postcss-loader@npm:6.1.1":
   version: 6.1.1
   resolution: "postcss-loader@npm:6.1.1"
   dependencies:
@@ -6450,7 +6450,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss-modules@npm:^4.1.3":
+"postcss-modules@npm:4.1.3":
   version: 4.1.3
   resolution: "postcss-modules@npm:4.1.3"
   dependencies:
@@ -6468,7 +6468,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"postcss-nested@npm:^5.0.5":
+"postcss-nested@npm:5.0.5":
   version: 5.0.5
   resolution: "postcss-nested@npm:5.0.5"
   dependencies:
@@ -6550,6 +6550,17 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
+"postcss@npm:8.3.5, postcss@npm:^8.2.15":
+  version: 8.3.5
+  resolution: "postcss@npm:8.3.5"
+  dependencies:
+    colorette: ^1.2.2
+    nanoid: ^3.1.23
+    source-map-js: ^0.6.2
+  checksum: c73fc4825ed27396d453a942628cd8e34dd43c11b724f43f65f376d3900037736013b6446f1d9947ce5a847837cf96649e9a3f200ca2bd94a884e91e56ee1ceb
+  languageName: node
+  linkType: hard
+
 "postcss@npm:^7.0.14, postcss@npm:^7.0.17, postcss@npm:^7.0.2, postcss@npm:^7.0.21, postcss@npm:^7.0.26, postcss@npm:^7.0.31, postcss@npm:^7.0.32, postcss@npm:^7.0.35, postcss@npm:^7.0.6":
   version: 7.0.36
   resolution: "postcss@npm:7.0.36"
@@ -6558,17 +6569,6 @@ fsevents@~2.3.2:
     source-map: ^0.6.1
     supports-color: ^6.1.0
   checksum: 4cfc0989b9ad5d0e8971af80d87f9c5beac5c84cb89ff22ad69852edf73c0a2fa348e7e0a135b5897bf893edad0fe86c428769050431ad9b532f072ff530828d
-  languageName: node
-  linkType: hard
-
-"postcss@npm:^8.2.15, postcss@npm:^8.3.5":
-  version: 8.3.5
-  resolution: "postcss@npm:8.3.5"
-  dependencies:
-    colorette: ^1.2.2
-    nanoid: ^3.1.23
-    source-map-js: ^0.6.2
-  checksum: c73fc4825ed27396d453a942628cd8e34dd43c11b724f43f65f376d3900037736013b6446f1d9947ce5a847837cf96649e9a3f200ca2bd94a884e91e56ee1ceb
   languageName: node
   linkType: hard
 
@@ -6803,7 +6803,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-dom@npm:^17.0.2":
+"react-dom@npm:17.0.2":
   version: 17.0.2
   resolution: "react-dom@npm:17.0.2"
   dependencies:
@@ -6816,7 +6816,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-hot-loader@npm:*, react-hot-loader@npm:^4.13.0":
+"react-hot-loader@npm:*, react-hot-loader@npm:4.13.0":
   version: 4.13.0
   resolution: "react-hot-loader@npm:4.13.0"
   dependencies:
@@ -6868,7 +6868,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react-svg-loader@npm:^3.0.3":
+"react-svg-loader@npm:3.0.3":
   version: 3.0.3
   resolution: "react-svg-loader@npm:3.0.3"
   dependencies:
@@ -6878,7 +6878,7 @@ fsevents@~2.3.2:
   languageName: node
   linkType: hard
 
-"react@npm:^17.0.2":
+"react@npm:17.0.2":
   version: 17.0.2
   resolution: "react@npm:17.0.2"
   dependencies:
@@ -7893,7 +7893,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"stylelint-config-recess-order@npm:^2.4.0":
+"stylelint-config-recess-order@npm:2.4.0":
   version: 2.4.0
   resolution: "stylelint-config-recess-order@npm:2.4.0"
   dependencies:
@@ -7904,7 +7904,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"stylelint-order@npm:4.1.x, stylelint-order@npm:^4.1.0":
+"stylelint-order@npm:4.1.0, stylelint-order@npm:4.1.x":
   version: 4.1.0
   resolution: "stylelint-order@npm:4.1.0"
   dependencies:
@@ -7917,7 +7917,7 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-"stylelint@npm:^13.13.1":
+"stylelint@npm:13.13.1":
   version: 13.13.1
   resolution: "stylelint@npm:13.13.1"
   dependencies:
@@ -8169,59 +8169,59 @@ resolve@^2.0.0-next.3:
   version: 0.0.0-use.local
   resolution: "time-tracker@workspace:."
   dependencies:
-    "@hot-loader/react-dom": ^17.0.1
-    "@types/react": ^17.0.14
-    "@types/react-dom": ^17.0.9
-    "@types/react-hot-loader": ^4.1.1
+    "@hot-loader/react-dom": 17.0.1
+    "@types/react": 17.0.14
+    "@types/react-dom": 17.0.9
+    "@types/react-hot-loader": 4.1.1
     "@types/uuid": ^8.3.1
-    "@typescript-eslint/eslint-plugin": ^4.28.4
-    "@typescript-eslint/parser": ^4.28.4
-    autoprefixer: ^10.3.1
-    camelcase: ^6.2.0
-    chokidar: ^3.5.2
-    circular-dependency-plugin: ^5.2.2
-    copy-webpack-plugin: ^9.0.1
-    css-loader: ^6.1.0
-    del: ^6.0.0
-    eazy-logger: ^3.1.0
-    esbuild-loader: ^2.13.1
-    eslint: ^7.31.0
-    eslint-import-resolver-typescript: ^2.4.0
-    eslint-plugin-import: ^2.23.4
-    eslint-plugin-react: ^7.24.0
-    eslint-plugin-rulesdir: ^0.2.0
-    express: ^4.17.1
-    fast-glob: ^3.2.7
-    fork-ts-checker-webpack-plugin: ^6.2.12
-    html-webpack-plugin: ^5.3.2
-    husky: ^7.0.1
-    image-size: ^1.0.0
-    lint-staged: ^11.0.1
-    log-update: ^4.0.0
-    mini-css-extract-plugin: ^2.1.0
-    module-alias: ^2.2.2
-    normalize.css: ^8.0.1
-    npm-check-updates: ^11.8.3
-    postcss: ^8.3.5
-    postcss-custom-media: ^8.0.0
-    postcss-loader: ^6.1.1
-    postcss-modules: ^4.1.3
-    postcss-nested: ^5.0.5
-    react: ^17.0.2
-    react-dom: ^17.0.2
-    react-hot-loader: ^4.13.0
-    react-svg-loader: ^3.0.3
+    "@typescript-eslint/eslint-plugin": 4.28.4
+    "@typescript-eslint/parser": 4.28.4
+    autoprefixer: 10.3.1
+    camelcase: 6.2.0
+    chokidar: 3.5.2
+    circular-dependency-plugin: 5.2.2
+    copy-webpack-plugin: 9.0.1
+    css-loader: 6.1.0
+    del: 6.0.0
+    eazy-logger: 3.1.0
+    esbuild-loader: 2.13.1
+    eslint: 7.31.0
+    eslint-import-resolver-typescript: 2.4.0
+    eslint-plugin-import: 2.23.4
+    eslint-plugin-react: 7.24.0
+    eslint-plugin-rulesdir: 0.2.0
+    express: 4.17.1
+    fast-glob: 3.2.7
+    fork-ts-checker-webpack-plugin: 6.2.12
+    html-webpack-plugin: 5.3.2
+    husky: 7.0.1
+    image-size: 1.0.0
+    lint-staged: 11.0.1
+    log-update: 4.0.0
+    mini-css-extract-plugin: 2.1.0
+    module-alias: 2.2.2
+    normalize.css: 8.0.1
+    npm-check-updates: 11.8.3
+    postcss: 8.3.5
+    postcss-custom-media: 8.0.0
+    postcss-loader: 6.1.1
+    postcss-modules: 4.1.3
+    postcss-nested: 5.0.5
+    react: 17.0.2
+    react-dom: 17.0.2
+    react-hot-loader: 4.13.0
+    react-svg-loader: 3.0.3
     redux: ^4.1.0
-    stylelint: ^13.13.1
-    stylelint-config-recess-order: ^2.4.0
-    stylelint-order: ^4.1.0
-    typescript: ^4.3.5
+    stylelint: 13.13.1
+    stylelint-config-recess-order: 2.4.0
+    stylelint-order: 4.1.0
+    typescript: 4.4.2
     uuid: ^8.3.2
-    webpack: ^5.45.1
-    webpack-bundle-analyzer: ^4.4.2
-    webpack-dev-middleware: ^5.0.0
-    webpack-hot-middleware: ^2.25.0
-    webpack-merge: ^5.8.0
+    webpack: 5.45.1
+    webpack-bundle-analyzer: 4.4.2
+    webpack-dev-middleware: 5.0.0
+    webpack-hot-middleware: 2.25.0
+    webpack-merge: 5.8.0
   languageName: unknown
   linkType: soft
 
@@ -8408,23 +8408,23 @@ resolve@^2.0.0-next.3:
   languageName: node
   linkType: hard
 
-typescript@^4.3.5:
-  version: 4.3.5
-  resolution: "typescript@npm:4.3.5"
+typescript@4.4.2:
+  version: 4.4.2
+  resolution: "typescript@npm:4.4.2"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bab033b5e2b0790dd35b77fd005df976ef80b8d84fd2c6e63cc31808151875beae9216e5a315fe7068e8499905c3c354248fe83272cdfc13b7705635f0c66c97
+  checksum: 194e08e9d1971d667d6fd1a0554616b7022312a2319d70e81a64e502a265992061ee7817ed9a69b52bbabe7a9b85e7938cb8c11c433e40a516b277f8c4dacd51
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.3.5#~builtin<compat/typescript>":
-  version: 4.3.5
-  resolution: "typescript@patch:typescript@npm%3A4.3.5#~builtin<compat/typescript>::version=4.3.5&hash=d8b4e7"
+"typescript@patch:typescript@4.4.2#~builtin<compat/typescript>":
+  version: 4.4.2
+  resolution: "typescript@patch:typescript@npm%3A4.4.2#~builtin<compat/typescript>::version=4.4.2&hash=d8b4e7"
   bin:
     tsc: bin/tsc
     tsserver: bin/tsserver
-  checksum: bc2c4fdf0f1557fdafe4ef74848c72ebd9c8c60829568248f869121aea2bb20e16649a252431d0acb185ec118143be22bed73d08f64379557810d82756afedde
+  checksum: 11d6ab6e868117908c388401e2ac06d503c5c8709115ab80ee69a1a6352c1f98471d1e595636bfe6a2d6b20b03a44df6bb2d3d198cea97c0c328968cd18d2b70
   languageName: node
   linkType: hard
 
@@ -8694,7 +8694,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^4.4.2":
+"webpack-bundle-analyzer@npm:4.4.2":
   version: 4.4.2
   resolution: "webpack-bundle-analyzer@npm:4.4.2"
   dependencies:
@@ -8713,7 +8713,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"webpack-dev-middleware@npm:^5.0.0":
+"webpack-dev-middleware@npm:5.0.0":
   version: 5.0.0
   resolution: "webpack-dev-middleware@npm:5.0.0"
   dependencies:
@@ -8729,7 +8729,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"webpack-hot-middleware@npm:^2.25.0":
+"webpack-hot-middleware@npm:2.25.0":
   version: 2.25.0
   resolution: "webpack-hot-middleware@npm:2.25.0"
   dependencies:
@@ -8741,7 +8741,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"webpack-merge@npm:^5.8.0":
+"webpack-merge@npm:5.8.0":
   version: 5.8.0
   resolution: "webpack-merge@npm:5.8.0"
   dependencies:
@@ -8761,7 +8761,7 @@ typescript@^4.3.5:
   languageName: node
   linkType: hard
 
-"webpack@npm:^5.45.1":
+"webpack@npm:5.45.1":
   version: 5.45.1
   resolution: "webpack@npm:5.45.1"
   dependencies:
