@@ -24,7 +24,7 @@
   "scripts": {
     "install-compiler": "npx sa-bright-compiler@1.28.0",
     "update-compiler": "npx sa-bright-compiler",
-    "install-types": "npx sa-bright-types@1.0.1",
+    "install-types": "npx sa-bright-types@1.0.3",
     "update-types": "npx sa-bright-types",
     "install-deps": "yarn",
     "check-deps": "npm-check-updates",

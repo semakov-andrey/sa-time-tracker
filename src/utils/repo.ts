@@ -29,7 +29,7 @@ export const repoFactory = <
 
   store.subscribe(() => {
     const newState = mapStates(store.getState());
-    Object.entries(newState).forEach(([ key, value ]: EntryOf<S>) => {
+    Object.entries(newState).forEach(([ key, value ]: [ string | keyof S, unknown ]) => {
       (mappedObject[key] as typeof value) = value;
     });
   });

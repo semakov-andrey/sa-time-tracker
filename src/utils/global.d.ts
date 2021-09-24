@@ -4,7 +4,7 @@ type ObjectKey = string | number | symbol;
 
 type ObjectType<T = unknown> = Record<ObjectKey, T>;
 
-type ObjectDefType<K extends string | number | symbol, T = unknown> = Record<K, T>;
+type ObjectDefType<K extends ObjectKey, T = unknown> = Record<K, T>;
 
 type Nullable<T> = T | null;
 
@@ -23,11 +23,11 @@ type ValueOf<T> = T[KeyOf<T>];
 type EntryOf<T> = { [K in KeyOf<T>]: [K, T[K]] }[KeyOf<T>];
 
 interface ObjectConstructor {
-  keys<T>(o: T): Array<KeyOf<T>>;
+  keys<T>(o: T): T extends Array<unknown> ? string : Array<KeyOf<T>>;
 
-  values<T>(o: T): Array<T[KeyOf<T>]>;
+  values<T>(o: T): T extends Array<infer R> ? R : Array<T[KeyOf<T>]>;
 
-  entries<T>(o: T): Array<EntryOf<T>>;
+  entries<T>(o: T): T extends Array<infer R> ? Array<[ string, R ]> : Array<EntryOf<T>>;
 
   fromEntries<T>(entries: Array<EntryOf<T>>): T;
 }
